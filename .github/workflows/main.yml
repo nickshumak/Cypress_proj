@@ -13,6 +13,5 @@ jobs:
         with:
           browser: chrome
           headless: true
-          start: npm run start
           # quote the url to be safe against YML parsing surprises
           wait-on: 'https://intense-shore-07962.herokuapp.com'
