@@ -12,5 +12,6 @@ jobs:
       - name: Cypress tests
         uses: cypress-io/github-action@v2
         with:
+          spec: cypress/integration/sample_spec.js
           browser: chrome
           headless: true
