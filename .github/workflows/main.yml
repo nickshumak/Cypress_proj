@@ -11,7 +11,7 @@ jobs:
       - name: Run E2E test
         uses: cypress-io/github-action@v2
         with:
-          config: baseUrl=https://seedxb.com
+          config: baseUrl=https://intense-shore-07962.herokuapp.com/  
           spec: cypress/integration/login_page_spec.js
           browser: chrome
           headless: true
