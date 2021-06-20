@@ -1,17 +1,17 @@
 name: Cypress tests
 on: [push]
 jobs:
-  # note: Ubuntu 16 probably works, but is deprecated
-
-  basic-ubuntu-18:
-    runs-on: ubuntu-18.04
+  cypress-run:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Cypress tests
+      - name: Setup npm package
+        run: npm install
+      - name: Run E2E test
         uses: cypress-io/github-action@v2
         with:
+          config: baseUrl=https://seedxb.com
           spec: cypress/integration/login_page_spec.js
           browser: chrome
           headless: true
