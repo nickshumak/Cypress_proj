@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (email, pass) => {
+    cy.get('#delivery_manager_email')
+        .type(email, { force: true });
+    cy.get('#delivery_manager_password')
+        .type(pass, { force: true });
+    cy.get('#delivery_manager_submit_action').click();
+})

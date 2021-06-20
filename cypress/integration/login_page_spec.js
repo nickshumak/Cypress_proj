@@ -20,11 +20,7 @@ describe('Admin console page', () => {
     });
 
     it('blocks unauthorized access', () => {
-        cy.get('#delivery_manager_email')
-            .type(email, { force: true });
-        cy.get('#delivery_manager_password')
-            .type(pass, { force: true });
-        cy.get('#delivery_manager_submit_action').click();
+        cy.login(email, pass);
 
         cy.get('.flashes').children()
             .should('contain', 'Invalid Email or password.')
@@ -32,11 +28,11 @@ describe('Admin console page', () => {
     });
 
     it('allows to be logged in', () => {
-        cy.get('#delivery_manager_email')
-            .type('deliverymanager@example.com', {force: true});
-        cy.get('#delivery_manager_password')
-            .type('password', {force: true});
-        cy.get('#delivery_manager_submit_action').click();
+        cy.fixture("test_data").then((user) => {
+            const userName = user.email;
+            const passWord = user.password;
+            cy.login(userName, passWord);
+        });
 
         cy.get('.flash')
             .should('contain', 'Signed in successfully.');

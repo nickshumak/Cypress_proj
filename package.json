@@ -1,6 +1,8 @@
 {
-  "cy:open": "cypress open",
-  "cy:run": "cypress run",
+  "name": "cypress_proj",
+  "scripts": {
+    "e2e": "cypress open"
+  },
   "dependencies": {
     "chance": "latest"
   }
