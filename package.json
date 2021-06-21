@@ -1,0 +1,9 @@
+{
+  "name": "cypress_proj",
+  "scripts": {
+    "e2e": "cypress open"
+  },
+  "dependencies": {
+    "chance": "latest"
+  }
+}

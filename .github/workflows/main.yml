@@ -1,0 +1,17 @@
+name: Cypress tests
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup npm package
+        run: npm install
+      - name: Run E2E test
+        #uses: cypress-io/github-action@v1
+        run: npx cypress run
+#        with:
+#          spec: cypress/integration/login_page_spec.js
+#          browser: chrome
+#          headless: true

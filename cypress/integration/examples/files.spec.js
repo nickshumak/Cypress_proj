@@ -3,7 +3,7 @@
 /// JSON fixture file can be loaded directly using
 // the built-in JavaScript bundler
 // @ts-ignore
-const requiredExample = require('../../fixtures/example')
+const requiredExample = require('../../fixtures/test_data')
 
 context('Files', () => {
   beforeEach(() => {
@@ -11,9 +11,9 @@ context('Files', () => {
   })
 
   beforeEach(() => {
-    // load example.json fixture file and store
+    // load test_data.json fixture file and store
     // in the test context object
-    cy.fixture('example.json').as('example')
+    cy.fixture('test_data.json').as('example')
   })
 
   it('cy.fixture() - load a fixture', () => {
@@ -23,8 +23,8 @@ context('Files', () => {
     // use a fixture file's content.
 
     // when application makes an Ajax request matching "GET **/comments/*"
-    // Cypress will intercept it and reply with the object in `example.json` fixture
-    cy.intercept('GET', '**/comments/*', { fixture: 'example.json' }).as('getComment')
+    // Cypress will intercept it and reply with the object in `test_data.json` fixture
+    cy.intercept('GET', '**/comments/*', { fixture: 'test_data.json' }).as('getComment')
 
     // we have code that gets a comment when
     // the button is clicked in scripts.js

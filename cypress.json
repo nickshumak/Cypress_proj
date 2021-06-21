@@ -1,1 +1,5 @@
-{}
+{
+  "baseUrl": "https://intense-shore-07962.herokuapp.com",
+  "viewportWidth": 1600,
+  "viewportHeight": 1400
+}
