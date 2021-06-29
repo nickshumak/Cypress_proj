@@ -28,7 +28,7 @@ describe('Admin console page', () => {
     });
 
     it('allows to be logged in', () => {
-        cy.fixture("test_data").then((user) => {
+        cy.fixture("admin_data").then((user) => {
             const userName = user.email;
             const passWord = user.password;
             cy.login(userName, passWord);
